@@ -41,9 +41,12 @@ RUN unzip ./pentaho-server-ce-9.0.0.0-423.zip -d /pentaho-server/ \
 	&& rm -rf ./pentaho-server \
 	&& rm -rf ./pentaho-server-ce-9.0.0.0-423.zip \
 	&& chmod 777 /pentaho-server \
-    && chmod 777 /pentaho-server/** \
-    && echo "tail -f /dev/null" >> /pentaho-server/start-pentaho.sh
+    && chmod -R 777 /pentaho-server/ \
+	&& chmod 777 /usr/local/openjdk-8 \
+    && chmod -R 777 /usr/local/openjdk-8/ \
+	&& rm "/pentaho-server/promptuser.sh" \
+	&& echo "tail -f /dev/null" >> /pentaho-server/start-pentaho.sh
 COPY ./context.xml /pentaho-server/tomcat/webapps/pentaho/META-INF/
 COPY ./repository.xml /pentaho-server/pentaho-solutions/system/jackrabbit/
 EXPOSE 8080
-CMD ["/pentaho-server/start-pentaho.sh"]
+CMD ["./start-pentaho.sh"]

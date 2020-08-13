@@ -41,7 +41,8 @@ CMD ["/pentaho-server/start-pentaho.sh"]
 #重新运行即可： <br/>
 `docker run -d --name pentahoserver -v pentaho-server-data:/pentaho-server -p 8080:8080 quarrierzhang/pentaho-server:9.0`
 
-推送两边
+推送两边ok
+
 
 
 

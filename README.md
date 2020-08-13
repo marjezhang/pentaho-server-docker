@@ -1,11 +1,11 @@
 # pentaho-server-docker
-å‚è€ƒå®˜ç½‘çš„è®¾ç½®ï¼š<br/>
-[pentaho server æŒ‰ç…§æ•™ç¨‹](https://help.pentaho.com/Documentation/9.0/Setup/Archive_installation)
+²Î¿¼¹ÙÍøµÄÉèÖÃ£º<br/>
+[pentaho server °´ÕÕ½Ì³Ì](https://help.pentaho.com/Documentation/9.0/Setup/Archive_installation)
 <br/>
-[pentaho server é…ç½®è®¾ç½®](https://help.pentaho.com/Documentation/9.0/Setup/Customize_the_Pentaho_Server)
+[pentaho server ÅäÖÃÉèÖÃ](https://help.pentaho.com/Documentation/9.0/Setup/Customize_the_Pentaho_Server)
 
 <br/>
-ç®€å•dockerfileï¼š<br/>
+¼òµ¥dockerfile£º<br/>
 
 ```dockerfile
 FROM openjdk:8u252
@@ -25,23 +25,23 @@ CMD ["/pentaho-server/start-pentaho.sh"]
 ```
 
 <br/>
-ä½¿ç”¨æ–¹æ³•ï¼š
-#åˆ›å»ºå·è½´<br>
+Ê¹ÓÃ·½·¨£º
+#´´½¨¾íÖá<br>
 
 `docker volume create pentaho-server-data`  
 
 <br>   
-#åˆ›å»ºä¸€ä¸ªå·è½´çš„pentahoçš„æ‹·è´ï¼Œä¾¿äºè‡ªå·±æ ¹æ®å®˜ç½‘é…ç½®è®¾ç½®ã€‚<br>
+#´´½¨Ò»¸ö¾íÖáµÄpentahoµÄ¿½±´£¬±ãÓÚ×Ô¼º¸ù¾İ¹ÙÍøÅäÖÃÉèÖÃ¡£<br>
 
 `docker run --rm -v pentaho-server-data:/pentaho-server quarrierzhang/pentaho-server:9.0 /bin/bash`    
 <br>
 
-#åˆ°å·è½´çš„æ–‡ä»¶å¤¹ä¸‹ æŒ‰ç…§å®˜ç½‘çš„è®¾ç½®  é…ç½®å¥½ pgsqlå­˜å‚¨å’Œ tomcatç­‰pgsqlçš„é©±åŠ¨å³å¯ <br/>
+#µ½¾íÖáµÄÎÄ¼ş¼ĞÏÂ °´ÕÕ¹ÙÍøµÄÉèÖÃ  ÅäÖÃºÃ pgsql´æ´¢ºÍ tomcatµÈpgsqlµÄÇı¶¯¼´¿É <br/>
 
-#é‡æ–°è¿è¡Œå³å¯ï¼š <br/>
+#ÖØĞÂÔËĞĞ¼´¿É£º <br/>
 `docker run -d --name pentahoserver -v pentaho-server-data:/pentaho-server -p 8080:8080 quarrierzhang/pentaho-server:9.0`
 
-æ¨é€ä¸¤è¾¹
+ÍÆËÍÁ½±ß
 
 
 
